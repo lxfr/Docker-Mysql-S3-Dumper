@@ -10,6 +10,12 @@ services:
         MYSQL_ADDRESS: "${MYSQL_ADDRESS}"
         MYSQL_USER: "${MYSQL_USER}"
         MYSQL_PASS: "#{MYSQL_PASS}"
+        AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+        AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+        AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
+        BACKUP_NAME: "${BACKUP_NAME}"
+        S3_BUCKET_NAME: "${S3_BUCKET_NAME}"
+        S3_FOLDER: "#{S3_FOLDER}"
       dockerfile: ./src/Dockerfile
     image: pehepemuscul:v1.4
     network_mode: "container:${MYSQL_CONTAINER_NAME}"
