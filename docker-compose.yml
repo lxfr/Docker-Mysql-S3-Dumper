@@ -1,0 +1,15 @@
+version: '2'
+services:
+  dumper:
+    build:
+      context: ./
+      args:
+        DIP: "${DIP}"
+        MYSQL_CONTAINER_NAME: "${MYSQL_CONTAINER_NAME}"
+        MYSQL_DB: "${MYSQL_DB}"
+        MYSQL_ADDRESS: "${MYSQL_ADDRESS}"
+        MYSQL_USER: "${MYSQL_USER}"
+        MYSQL_PASS: "#{MYSQL_PASS}"
+      dockerfile: ./src/Dockerfile
+    image: pehepemuscul:v1.4
+    network_mode: "container:${MYSQL_CONTAINER_NAME}"
