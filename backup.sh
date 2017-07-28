@@ -7,8 +7,8 @@ echo "
 DIP=$DIP" >> .env
 docker exec -it $MYSQL_CONTAINER_NAME iptables -L -n
 docker exec -it $MYSQL_CONTAINER_NAME netstat -npl | grep 3306
-docker-compose down
-docker-compose build
-docker-compose up
-docker-compose down
+docker-compose -f app.yml down
+docker-compose -f app.yml build
+docker-compose -f app.yml up
+docker-compose -f app.yml down
 echo "SUCCESSFULL DONE :)"
